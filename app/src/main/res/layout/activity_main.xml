@@ -1,18 +1,180 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
+    <RelativeLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_height="200dp"
+        android:background="#FFFFFF">
+        <RelativeLayout
+            android:id="@+id/rel5"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            android:background="@drawable/home_top_blue_bar">
+            <RelativeLayout
+                android:id="@+id/toprel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="20dp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+                <ImageView
+                    android:layout_width="200dp"
+                    android:layout_height="42dp"
+                    android:layout_alignParentLeft="true"
+                    android:src="@drawable/logo" />
+
+                <ImageView
+                    android:id="@+id/home_logout_btn"
+                    android:layout_width="32dp"
+                    android:layout_height="32dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/logout"
+                    tools:ignore="OnClick" />
+
+            </RelativeLayout>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_marginTop="50dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <GridLayout
+                android:columnCount="1"
+                android:rowCount="1"
+                android:alignmentMode="alignMargins"
+                android:columnOrderPreserved="false"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp"
+                    android:layout_columnWeight="1"
+                    android:layout_rowWeight="1"
+                    app:cardElevation="6dp"
+                    app:cardCornerRadius="12dp"
+                    android:layout_margin="20dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:orientation="horizontal">
+                        <ImageView
+                            android:layout_width="110dp"
+                            android:layout_height="match_parent"
+                            android:src="@drawable/plane" />
+
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="17dp"
+                                android:fontFamily="sans-serif"
+                                android:text="TIME TO"
+                                android:gravity="center"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="-8dp"
+                                android:text="T R A V E L"
+                                android:textStyle="bold"
+                                android:textColor="#000000"
+                                android:textSize="30dp"
+                                android:gravity="center"/>
+                            <TextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginLeft="20dp"
+                                android:layout_marginTop="-5dp"
+                                android:fontFamily="sans-serif"
+                                android:textSize="9dp"
+                                android:text="Don't quit your day dreams"
+                                android:gravity="center"/>
+                        </LinearLayout>
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+            </GridLayout>
+        </LinearLayout>
+
+    </RelativeLayout>
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+        <!--Home Content Category part start-->
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            Home Content Post part start
+            <RelativeLayout
+                android:id="@+id/rel3"
+                android:layout_below="@id/rel2"
+                android:layout_marginTop="-70dp"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:background="@drawable/home_content_post">
+            </RelativeLayout>
+
+            Home Content Category part start
+            <RelativeLayout
+                android:id="@+id/rel2"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:background="@drawable/home_content_category"
+                android:paddingTop="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginLeft="30dp"
+                    android:fontFamily="sans-serif"
+                    android:gravity="center"
+                    android:text="Categories in Sri Lanka"
+                    android:textSize="14dp" />
+
+                <ImageView
+                    android:layout_width="22dp"
+                    android:layout_height="22dp"
+                    android:layout_marginRight="30dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@drawable/ic_category" />
+
+                <androidx.viewpager2.widget.ViewPager2
+                    android:id="@+id/locationViewPager"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:layout_margin="30dp">
+
+                </androidx.viewpager2.widget.ViewPager2>
+
+
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</LinearLayout>

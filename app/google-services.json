@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "267043010177",
+    "firebase_url": "https://takemethereapp-b2646.firebaseio.com",
+    "project_id": "takemethereapp-b2646",
+    "storage_bucket": "takemethereapp-b2646.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:267043010177:android:7539f7cd5f46a4e6e77f80",
+        "android_client_info": {
+          "package_name": "com.example.takemethereapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "267043010177-7i0q04bj5imeci20pdvo10o3da96285h.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.takemethereapp",
+            "certificate_hash": "6a01efa342117d4cda3341445bfc1473b0b2e3c3"
+          }
+        },
+        {
+          "client_id": "267043010177-vepq0i44dm2c5hqcjvub1460agd2pv53.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrTsPgj87nMTyEMje0wfPSjGL7yQZRbek"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "267043010177-vepq0i44dm2c5hqcjvub1460agd2pv53.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
