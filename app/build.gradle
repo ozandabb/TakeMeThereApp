@@ -65,4 +65,7 @@ dependencies {
     implementation "com.squareup.picasso:picasso:2.71828"
     //Ken burnus view
     implementation "com.flaviofaria:kenburnsview:1.0.7"
+
+    //IMAGE COMPRESSOR
+    compile 'id.zelory:compressor:1.0.4'
 }

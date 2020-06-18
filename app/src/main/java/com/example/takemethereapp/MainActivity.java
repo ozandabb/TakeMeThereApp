@@ -165,8 +165,6 @@ public class MainActivity extends AppCompatActivity {
                         startActivity(profileIntent);
                         finish();
                         break;
-
-
                 }
 
                 return false;
