@@ -2,6 +2,7 @@ package com.example.takemethereapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.CompositePageTransformer;
 import androidx.viewpager2.widget.MarginPageTransformer;
@@ -17,9 +18,16 @@ import android.widget.ImageView;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.firestore.DocumentChange;
+import com.google.firebase.firestore.EventListener;
+import com.google.firebase.firestore.FirebaseFirestore;
+import com.google.firebase.firestore.FirebaseFirestoreException;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.annotation.Nullable;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -28,6 +36,11 @@ public class MainActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private ImageView logout, gomainpage;
 
+    private RecyclerView blog_list_view;
+    private BlogRecylerAdapter blogRecylerAdapter;
+    private List<BlogPost> blogLost;
+    private FirebaseFirestore firebaseFirestore;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,16 +48,27 @@ public class MainActivity extends AppCompatActivity {
 
         setupBottomNavBar();
 
-        mAuth = FirebaseAuth.getInstance();
-        logout = findViewById(R.id.home_logout_btn);
-//        gomainpage = findViewById(R.id.gomainpage);
+//        blog_list_view = findViewById(R.id.blog_list_view);
+//        blogLost = new ArrayList<>();
+//        blogRecylerAdapter = new BlogRecylerAdapter(blogLost);
 //
-//        gomainpage.setOnClickListener(new View.OnClickListener() {
+//        blog_list_view.setLayoutManager(new LinearLayoutManager(this));
+//        blog_list_view.setAdapter(blogRecylerAdapter);
+
+        mAuth = FirebaseAuth.getInstance();
+        firebaseFirestore = FirebaseFirestore.getInstance();
+        logout = findViewById(R.id.home_logout_btn);
+
+//        firebaseFirestore.collection("Posts").addSnapshotListener(new EventListener<QuerySnapshot>() {
 //            @Override
-//            public void onClick(View v) {
-//                Intent goSetup = new Intent(MainActivity.this, AccountSettings.class);
-//                startActivity(goSetup);
-//                finish();
+//            public void onEvent(@Nullable QuerySnapshot queryDocumentSnapshots, @Nullable FirebaseFirestoreException e) {
+//                for (DocumentChange doc: queryDocumentSnapshots.getDocumentChanges()){
+//                    if (doc.getType() == DocumentChange.Type.ADDED){
+//                        BlogPost blogPost = doc.getDocument().toObject(BlogPost.class);
+//                        blogLost.add(blogPost);
+//                        blogRecylerAdapter.notifyDataSetChanged();
+//                    }
+//                }
 //            }
 //        });
 

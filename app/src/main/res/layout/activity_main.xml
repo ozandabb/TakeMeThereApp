@@ -4,20 +4,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#04095E"
     android:orientation="vertical"
     tools:context=".MainActivity">
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:background="#04095E">
 
 <!--        Top bar with name and logout button-->
         <RelativeLayout
             android:id="@+id/rel0"
             android:layout_width="match_parent"
             android:layout_height="100dp">
-<!--            android:background="@drawable/home_top_blue_bar"-->
             <RelativeLayout
                 android:id="@+id/toprel"
                 android:layout_width="match_parent"
@@ -39,19 +34,37 @@
                     tools:ignore="OnClick" />
             </RelativeLayout>
         </RelativeLayout>
+        <!-- Top bar with name and logout button ends here-->
+
+    <RelativeLayout
+        android:layout_below="@id/rel0"
+        android:layout_marginTop="-20dp"
+        android:background="@drawable/home_content_post"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:layout_editor_absoluteX="8dp"
+            tools:layout_editor_absoluteY="8dp">
+
+        <!-- Recomandation section with image slider-->
         <RelativeLayout
             android:id="@+id/rel1"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@id/rel0"
-            android:background="@drawable/home_content_post"
-            android:layout_marginTop="-20dp">
-<!--            <ScrollView-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                tools:layout_editor_absoluteX="8dp"-->
-<!--                tools:layout_editor_absoluteY="8dp">-->
-<!--            <include layout="@layout/layout_home_category_section"></include>-->
+            >
+
+
+
+
+
+
+
+
+
+
+
             <RelativeLayout
                 android:id="@+id/rel01"
                 android:layout_marginLeft="20dp"
@@ -75,18 +88,17 @@
                 android:layout_below="@id/rel01"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp">
+               >
                 <TextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
+                    android:layout_marginLeft="40dp"
                     android:text="Travel Places By Category"
                     android:textSize="15dp" />
                 <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginRight="40dp"
                     android:layout_alignParentRight="true"
                     android:src="@drawable/ic_more" />
 
@@ -102,11 +114,35 @@
 
                 </androidx.viewpager2.widget.ViewPager2>
             </RelativeLayout>
-<!--            </ScrollView>-->
-        </RelativeLayout>
-        <include layout="@layout/layout_bottom_navigation_view"></include>
+            <RelativeLayout
+                android:id="@+id/rel03"
+                android:layout_below="@id/rel02"
+                android:layout_width="match_parent"
+                android:layout_height="500dp">
 
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/blog_list_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginBottom="60dp">
+
+                </androidx.recyclerview.widget.RecyclerView>
+
+            </RelativeLayout>
+
+
+
+
+
+
+
+        </RelativeLayout>
+        </ScrollView>
+        <include layout="@layout/layout_bottom_navigation_view"></include>
     </RelativeLayout>
+
+
+
 
 <!--        <LinearLayout-->
 <!--            android:layout_marginTop="50dp"-->

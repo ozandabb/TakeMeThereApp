@@ -33,7 +33,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Random;
 
-import id.zelory.compressor.Compressor;
 
 public class AddPostActivity extends AppCompatActivity {
 
@@ -93,8 +92,8 @@ public class AddPostActivity extends AppCompatActivity {
                             taskSnapshot.getStorage().getDownloadUrl().addOnSuccessListener(new OnSuccessListener<Uri>() {
                                 @Override
                                 public void onSuccess(Uri uri) {
-                                    File newImage = new File(postImageUri.getPath());
-                                    compressedImageFile = Compressor.getDefault(AddPostActivity.this).compressToFile(newImage);
+//                                    File newImage = new File(postImageUri.getPath());
+//                                    compressedImageFile = Compressor.getDefault(AddPostActivity.this).compressToFile(newImage);
                                     String download_url = uri.toString();
                                     Map<String,Object> postMap = new HashMap<>();
                                     postMap.put("image_url",download_url);
