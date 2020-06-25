@@ -119,6 +119,11 @@
                 android:layout_below="@id/rel02"
                 android:layout_width="match_parent"
                 android:layout_height="500dp">
+                <Button
+                    android:id="@+id/goSetup"
+                    android:layout_width="match_parent"
+                    android:text="Go setup"
+                    android:layout_height="50dp"/>
 
                 <androidx.recyclerview.widget.RecyclerView
                     android:id="@+id/blog_list_view"

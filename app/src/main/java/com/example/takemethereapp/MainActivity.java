@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -35,6 +36,7 @@ public class MainActivity extends AppCompatActivity {
     private static final int ACTIVITY_NUM = 0;
     private FirebaseAuth mAuth;
     private ImageView logout, gomainpage;
+    private Button goSetup;
 
     private RecyclerView blog_list_view;
     private BlogRecylerAdapter blogRecylerAdapter;
@@ -58,6 +60,16 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
         logout = findViewById(R.id.home_logout_btn);
+        goSetup = findViewById(R.id.goSetup);
+
+        goSetup.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goMain = new Intent(MainActivity.this, InstructionActivity.class);
+                startActivity(goMain);
+                finish();
+            }
+        });
 
 //        firebaseFirestore.collection("Posts").addSnapshotListener(new EventListener<QuerySnapshot>() {
 //            @Override
@@ -176,13 +188,14 @@ public class MainActivity extends AppCompatActivity {
                         finish();
                         break;
                     case R.id.ic_add:
-                        Intent runIntent = new Intent(MainActivity.this, AddPostActivity.class);
+                        Intent runIntent = new Intent(MainActivity.this, ComingSoon.class);
                         startActivity(runIntent);
                         finish();
                         break;
                     case R.id.ic_device:
-                        Intent deviceIntent = new Intent(MainActivity.this, MainActivity.class);
+                        Intent deviceIntent = new Intent(MainActivity.this, NotificationActivity.class);
                         startActivity(deviceIntent);
+                        finish();
                         break;
                     case R.id.ic_profile:
                         Intent profileIntent = new Intent(MainActivity.this, AccountSettings.class);

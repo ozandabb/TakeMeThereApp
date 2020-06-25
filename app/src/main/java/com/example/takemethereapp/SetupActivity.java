@@ -14,9 +14,12 @@ import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
@@ -67,6 +70,13 @@ public class SetupActivity extends AppCompatActivity {
         setupName = findViewById(R.id.setup_name);
         setupButton = findViewById(R.id.setup_submit_btn);
         setupProgreess = findViewById(R.id.setup_progressbar);
+
+        Animation a = AnimationUtils.loadAnimation(this, R.anim.fade_in);
+        a.reset();
+        TextView tv = (TextView) findViewById(R.id.fadeTextView);
+        tv.clearAnimation();
+        tv.startAnimation(a);
+
 
 //        setupProgreess.setVisibility(View.VISIBLE);
 //        setupButton.setEnabled(false);
@@ -203,7 +213,7 @@ public class SetupActivity extends AppCompatActivity {
     }
 
     private void sendToMain() {
-        Intent goMain = new Intent(SetupActivity.this, MainActivity.class);
+        Intent goMain = new Intent(SetupActivity.this, InstructionActivity.class);
         startActivity(goMain);
         finish();
     }

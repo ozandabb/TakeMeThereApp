@@ -12,13 +12,13 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
-public class CategoryActivity extends AppCompatActivity {
-    private static final int ACTIVITY_NUM = 1;
+public class ComingSoon extends AppCompatActivity {
+    private static final int ACTIVITY_NUM = 2;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_category);
+        setContentView(R.layout.activity_coming_soon);
 
         setupBottomNavBar();
     }
@@ -36,7 +36,7 @@ public class CategoryActivity extends AppCompatActivity {
     }
 
     private void sendToLogin() {
-        Intent goLogin = new Intent(CategoryActivity.this, LoginActivity.class);
+        Intent goLogin = new Intent(ComingSoon.this, LoginActivity.class);
         startActivity(goLogin);
         finish();
     }
@@ -54,27 +54,27 @@ public class CategoryActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.ic_home:
-                        Intent homeIntent = new Intent(CategoryActivity.this,MainActivity.class);
+                        Intent homeIntent = new Intent(ComingSoon.this,MainActivity.class);
                         startActivity(homeIntent);
                         finish();
                         break;
                     case R.id.ic_category:
-                        Intent ExerciseIntent = new Intent(CategoryActivity.this, CategoryActivity.class);
+                        Intent ExerciseIntent = new Intent(ComingSoon.this, CategoryActivity.class);
                         startActivity(ExerciseIntent);
                         finish();
                         break;
                     case R.id.ic_add:
-                        Intent runIntent = new Intent(CategoryActivity.this, ComingSoon.class);
+                        Intent runIntent = new Intent(ComingSoon.this, ComingSoon.class);
                         startActivity(runIntent);
                         finish();
                         break;
                     case R.id.ic_device:
-                        Intent deviceIntent = new Intent(CategoryActivity.this, NotificationActivity.class);
+                        Intent deviceIntent = new Intent(ComingSoon.this, NotificationActivity.class);
                         startActivity(deviceIntent);
                         finish();
                         break;
                     case R.id.ic_profile:
-                        Intent profileIntent = new Intent(CategoryActivity.this, AccountSettings.class);
+                        Intent profileIntent = new Intent(ComingSoon.this, AccountSettings.class);
                         startActivity(profileIntent);
                         finish();
                         break;

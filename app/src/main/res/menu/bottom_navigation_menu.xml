@@ -15,12 +15,12 @@
     <item
         android:id="@+id/ic_add"
         android:icon="@drawable/ic_plus"
-        android:title="Add">
+        android:title="Add Journey">
     </item>
     <item
         android:id="@+id/ic_device"
-        android:icon="@drawable/ic_category"
-        android:title="Devices">
+        android:icon="@drawable/ic_notification"
+        android:title="Notifications">
     </item>
     <item
         android:id="@+id/ic_profile"

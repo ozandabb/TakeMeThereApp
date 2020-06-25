@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,6 +26,7 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText regConfirmPass;
     private Button regBtn, reg_login_btn;
     private ProgressBar registerProgress;
+    private TextView logText;
 
     private FirebaseAuth mAuth;
 
@@ -39,10 +41,12 @@ public class RegisterActivity extends AppCompatActivity {
         regPass = (EditText) findViewById(R.id.reg_password);
         regConfirmPass = (EditText) findViewById(R.id.reg_confirm_pass);
         regBtn = (Button) findViewById(R.id.reg_btn);
-        reg_login_btn = (Button) findViewById(R.id.reg_login_btn);
+//        reg_login_btn = (Button) findViewById(R.id.reg_login_btn);
         registerProgress = (ProgressBar) findViewById(R.id.register_progressbar);
+        logText = findViewById(R.id.logTextView);
 
-        reg_login_btn.setOnClickListener(new View.OnClickListener() {
+
+        logText.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 finish();
