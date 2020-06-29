@@ -96,6 +96,7 @@
                     android:text="Travel Places By Category"
                     android:textSize="15dp" />
                 <ImageView
+                    android:id="@+id/arrowHome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginRight="40dp"

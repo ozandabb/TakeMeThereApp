@@ -2,10 +2,371 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:background="#04095E"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".CategoryActivity">
 
+            <!--        Top bar with name and logout button-->
+            <RelativeLayout
+                android:id="@+id/rel0"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+                <RelativeLayout
+                    android:id="@+id/toprel"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginTop="20dp"
+                    android:layout_marginRight="20dp">
+                    <ImageView
+                        android:layout_width="200dp"
+                        android:layout_height="42dp"
+                        android:layout_alignParentLeft="true"
+                        android:src="@drawable/logo" />
+                    <ImageView
+                        android:id="@+id/home_logout_btn"
+                        android:layout_width="32dp"
+                        android:layout_height="42dp"
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/logout"
+                        tools:ignore="OnClick" />
+                </RelativeLayout>
+            </RelativeLayout>
+            <!-- Top bar with name and logout button ends here-->
+
+    <RelativeLayout
+        android:layout_below="@id/rel0"
+        android:layout_marginTop="-20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="8dp">
+
+    <RelativeLayout
+        android:layout_below="@id/rel0"
+        android:background="@drawable/home_content_post"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+
+            <RelativeLayout
+                android:id="@+id/relCategories"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                                        <!-- by district section start here-->
+                                        <RelativeLayout
+                                            android:id="@+id/relDistrict"
+                                            android:layout_marginLeft="20dp"
+                                            android:layout_marginTop="25dp"
+                                            android:layout_marginRight="20dp"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+                                            <TextView
+                                                android:layout_width="wrap_content"
+                                                android:layout_height="wrap_content"
+                                                android:layout_marginLeft="20dp"
+                                                android:text="by  D I S T R I C T"
+                                                android:textSize="20dp"
+                                                android:textStyle="bold"
+                                                android:textColor="#000000"
+                                                android:gravity="center"/>
+                                        </RelativeLayout>
+
+                                        <RelativeLayout
+                                            android:id="@+id/relDistrictSubTitle"
+                                            android:layout_below="@id/relDistrict"
+                                            android:layout_width="match_parent"
+                                            android:layout_height="wrap_content">
+
+                                                <LinearLayout
+                                                    android:layout_width="match_parent"
+                                                    android:layout_height="wrap_content"
+                                                    android:orientation="vertical">
+                                                    <TextView
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content"
+                                                        android:layout_marginLeft="40dp"
+                                                        android:text="Travel Places by District"
+                                                        android:textSize="15dp" />
+                                                   <HorizontalScrollView
+                                                       android:layout_width="match_parent"
+                                                       android:layout_height="wrap_content"
+                                                       android:layout_marginTop="10dp">
+                                                       <LinearLayout
+                                                           android:layout_width="match_parent"
+                                                           android:layout_height="match_parent"
+                                                           android:orientation="horizontal">
+
+                                                           <LinearLayout
+                                                               android:layout_width="match_parent"
+                                                               android:layout_height="match_parent"
+                                                               android:layout_margin="10dp"
+                                                               android:orientation="vertical">
+
+                                                               <Button
+                                                                   android:id="@+id/btnKandy"
+                                                                   android:layout_width="200dp"
+                                                                   android:layout_height="50dp"
+                                                                   android:layout_margin="5dp"
+                                                                   android:background="#00a8f3"
+                                                                   android:text="K a n d y"
+                                                                   android:textStyle="bold"
+                                                                   android:textColor="#ffffff"
+                                                                   android:textAllCaps="false"
+                                                                   />
+                                                               <Button
+                                                                   android:id="@+id/btnNuwaraEliya"
+                                                                   android:layout_width="200dp"
+                                                                   android:layout_height="50dp"
+                                                                   android:layout_margin="5dp"
+                                                                   android:background="#00a8f3"
+                                                                   android:textStyle="bold"
+                                                                   android:textColor="#ffffff"
+                                                                   android:text="N u w a r a E l i y a"
+                                                                   android:textAllCaps="false"
+                                                                   />
+                                                               <Button
+                                                                   android:id="@+id/btnMathale"
+                                                                   android:layout_width="200dp"
+                                                                   android:layout_height="50dp"
+                                                                   android:layout_margin="5dp"
+                                                                   android:background="#00a8f3"
+                                                                   android:textStyle="bold"
+                                                                   android:textColor="#ffffff"
+                                                                   android:text="M a t h a l e"
+                                                                   android:textAllCaps="false"
+                                                                   />
+                                                           </LinearLayout>
+                                                           <LinearLayout
+                                                               android:layout_width="match_parent"
+                                                               android:layout_height="match_parent"
+                                                               android:layout_margin="10dp"
+                                                               android:orientation="vertical">
+                                                               <Button
+                                                                   android:id="@+id/btnKurunegala"
+                                                                   android:layout_width="200dp"
+                                                                   android:layout_height="50dp"
+                                                                   android:layout_margin="5dp"
+                                                                   android:background="#00a8f3"
+                                                                   android:text="K u r u n a g a l a"
+                                                                   android:textStyle="bold"
+                                                                   android:textColor="#ffffff"
+                                                                   android:textAllCaps="false"
+                                                                   />
+                                                               <Button
+                                                                   android:id="@+id/btnMatara"
+                                                                   android:layout_width="200dp"
+                                                                   android:layout_height="50dp"
+                                                                   android:layout_margin="5dp"
+                                                                   android:background="#00a8f3"
+                                                                   android:textStyle="bold"
+                                                                   android:textColor="#ffffff"
+                                                                   android:text="M a t a r a"
+                                                                   android:textAllCaps="false"
+                                                                   />
+                                                               <Button
+                                                                   android:id="@+id/btnHambanthota"
+                                                                   android:layout_width="200dp"
+                                                                   android:layout_height="50dp"
+                                                                   android:layout_margin="5dp"
+                                                                   android:background="#00a8f3"
+                                                                   android:textStyle="bold"
+                                                                   android:textColor="#ffffff"
+                                                                   android:text="H a m b a n t h o t a"
+                                                                   android:textAllCaps="false"
+                                                                   />
+                                                           </LinearLayout>
+                                                           <LinearLayout
+                                                               android:layout_width="match_parent"
+                                                               android:layout_height="match_parent"
+                                                               android:layout_margin="10dp"
+                                                               android:orientation="vertical">
+
+                                                               <Button
+                                                                   android:id="@+id/btnKegalle"
+                                                                   android:layout_width="200dp"
+                                                                   android:layout_height="50dp"
+                                                                   android:layout_margin="5dp"
+                                                                   android:background="#00a8f3"
+                                                                   android:text="K e g a l l e"
+                                                                   android:textStyle="bold"
+                                                                   android:textColor="#ffffff"
+                                                                   android:textAllCaps="false"
+                                                                   />
+                                                               <Button
+                                                                   android:id="@+id/btnPolonnaruwa"
+                                                                   android:layout_width="200dp"
+                                                                   android:layout_height="50dp"
+                                                                   android:layout_margin="5dp"
+                                                                   android:background="#00a8f3"
+                                                                   android:textStyle="bold"
+                                                                   android:textColor="#ffffff"
+                                                                   android:text="P o l o n n a r u w a"
+                                                                   android:textAllCaps="false"
+                                                                   />
+                                                               <Button
+                                                                   android:id="@+id/btnJaffna"
+                                                                   android:layout_width="200dp"
+                                                                   android:layout_height="50dp"
+                                                                   android:layout_margin="5dp"
+                                                                   android:background="#00a8f3"
+                                                                   android:textStyle="bold"
+                                                                   android:textColor="#ffffff"
+                                                                   android:text="J a f f n a"
+                                                                   android:textAllCaps="false"
+                                                                   />
+                                                           </LinearLayout>
+                                                       </LinearLayout>
+                                                   </HorizontalScrollView>
+                                                </LinearLayout>
+
+                                             </RelativeLayout>
+            </RelativeLayout>
+            <!--  by district section ends here-->
+
+            <!--  Categories section ends here-->
+            <RelativeLayout
+                android:id="@+id/relCategories1"
+                android:layout_below="@id/relCategories"
+                android:background="@drawable/categories_section"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                                                    <RelativeLayout
+                                                        android:id="@+id/relOtherCat"
+                                                        android:layout_marginLeft="20dp"
+                                                        android:layout_marginTop="25dp"
+                                                        android:layout_marginRight="20dp"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content">
+                                                        <TextView
+                                                            android:layout_width="wrap_content"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginLeft="20dp"
+                                                            android:text="C A T E G O R I E S"
+                                                            android:textSize="20dp"
+                                                            android:textStyle="bold"
+                                                            android:textColor="#FFFFFF"
+                                                            android:gravity="center"/>
+                                                    </RelativeLayout>
+                                                    <RelativeLayout
+                                                        android:id="@+id/relOtherContent"
+                                                        android:layout_below="@id/relOtherCat"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content">
+                                                        <TextView
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content"
+                                                            android:layout_marginLeft="40dp"
+                                                            android:text="Other Categories"
+                                                            android:textColor="#FFFFFF"
+                                                            android:textSize="15dp" />
+                                                    </RelativeLayout>
+
+                                                    <RelativeLayout
+                                                        android:id="@+id/relCat"
+                                                        android:layout_below="@id/relOtherContent"
+                                                        android:layout_marginTop="15dp"
+                                                        android:layout_width="match_parent"
+                                                        android:layout_height="wrap_content">
+
+                                                        <GridLayout
+                                                            android:columnCount="2"
+                                                            android:rowCount="3"
+                                                            android:alignmentMode="alignMargins"
+                                                            android:columnOrderPreserved="false"
+                                                            android:layout_width="match_parent"
+                                                            android:layout_height="wrap_content">
+
+                                                            <androidx.cardview.widget.CardView
+                                                                android:layout_width="wrap_content"
+                                                                android:layout_height="wrap_content"
+                                                                android:layout_columnWeight="1"
+                                                                android:layout_rowWeight="1"
+                                                                app:cardElevation="6dp"
+                                                                app:cardCornerRadius="12dp"
+                                                                android:layout_margin="12dp">
+
+                                                                <LinearLayout
+                                                                    android:layout_width="match_parent"
+                                                                    android:layout_height="match_parent"
+                                                                    android:gravity="center"
+                                                                    android:orientation="vertical"
+                                                                    android:padding="16dp">
+                                                                </LinearLayout>
+                                                            </androidx.cardview.widget.CardView>
+                                                            <androidx.cardview.widget.CardView
+                                                                android:layout_width="wrap_content"
+                                                                android:layout_height="wrap_content"
+                                                                android:layout_columnWeight="1"
+                                                                android:layout_rowWeight="1"
+                                                                app:cardElevation="6dp"
+                                                                app:cardCornerRadius="12dp"
+                                                                android:layout_margin="12dp"
+                                                                >
+                                                                <LinearLayout
+                                                                    android:orientation="vertical"
+                                                                    android:padding="16dp"
+                                                                    android:gravity="center"
+                                                                    android:layout_width="match_parent"
+                                                                    android:layout_height="match_parent">
+                                                                </LinearLayout>
+                                                            </androidx.cardview.widget.CardView>
+                                                            <androidx.cardview.widget.CardView
+                                                                android:layout_width="wrap_content"
+                                                                android:layout_height="wrap_content"
+                                                                android:layout_columnWeight="1"
+                                                                android:layout_rowWeight="1"
+                                                                app:cardElevation="6dp"
+                                                                app:cardCornerRadius="12dp"
+                                                                android:layout_margin="12dp">
+
+                                                                <LinearLayout
+                                                                    android:layout_width="match_parent"
+                                                                    android:layout_height="match_parent"
+                                                                    android:gravity="center"
+                                                                    android:orientation="vertical"
+                                                                    android:padding="16dp">
+                                                                </LinearLayout>
+                                                            </androidx.cardview.widget.CardView>
+                                                            <androidx.cardview.widget.CardView
+                                                                android:layout_width="wrap_content"
+                                                                android:layout_height="wrap_content"
+                                                                android:layout_columnWeight="1"
+                                                                android:layout_rowWeight="1"
+                                                                app:cardElevation="6dp"
+                                                                app:cardCornerRadius="12dp"
+                                                                android:layout_margin="12dp"
+                                                                >
+                                                                <LinearLayout
+                                                                    android:orientation="vertical"
+                                                                    android:padding="16dp"
+                                                                    android:gravity="center"
+                                                                    android:layout_width="match_parent"
+                                                                    android:layout_height="match_parent">
+                                                                </LinearLayout>
+                                                            </androidx.cardview.widget.CardView>
+
+                                                        </GridLayout>
+                                                    </RelativeLayout>
+
+            </RelativeLayout>
+        <!--  Categories section ends here-->
+
+
+    </RelativeLayout>
+
+</ScrollView>
+    </RelativeLayout>
     <include layout="@layout/layout_bottom_navigation_view"></include>
 
 </RelativeLayout>
+

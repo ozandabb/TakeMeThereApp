@@ -35,7 +35,6 @@ public class TravelLocationAdapter extends RecyclerView.Adapter<TravelLocationAd
 
     @Override
     public void onBindViewHolder(@NonNull TravelLocationViewHolder holder, int position) {
-
         holder.setLocationDate(travelLocations.get(position));
     }
 

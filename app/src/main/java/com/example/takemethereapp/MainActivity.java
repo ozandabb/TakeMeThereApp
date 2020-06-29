@@ -35,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private static final int ACTIVITY_NUM = 0;
     private FirebaseAuth mAuth;
-    private ImageView logout, gomainpage;
+    private ImageView logout, arrow;
     private Button goSetup;
 
     private RecyclerView blog_list_view;
@@ -61,6 +61,18 @@ public class MainActivity extends AppCompatActivity {
         firebaseFirestore = FirebaseFirestore.getInstance();
         logout = findViewById(R.id.home_logout_btn);
         goSetup = findViewById(R.id.goSetup);
+        arrow = findViewById(R.id.arrowHome);
+
+        arrow.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+                Intent goCategoryPage = new Intent(MainActivity.this, CategoryActivity.class);
+                startActivity(goCategoryPage);
+                finish();
+
+            }
+        });
 
         goSetup.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -105,6 +117,7 @@ public class MainActivity extends AppCompatActivity {
         travelLocationWaterfalls.location = "Sri Lanka";
         travelLocations.add(travelLocationWaterfalls);
 
+
         TravelLocation travelLocationCamping =  new TravelLocation();
         travelLocationCamping.imageUri = "https://firebasestorage.googleapis.com/v0/b/takemethereapp-b2646.appspot.com/o/sliderImages%2F2225850_17051516230052996076.jpg?alt=media&token=88872f59-0e2d-4cf0-b76b-f9b95ed23885";
         travelLocationCamping.title = "Camping";
@@ -141,6 +154,15 @@ public class MainActivity extends AppCompatActivity {
         });
 
         locationViewPager.setPageTransformer(compositePageTransformer);
+
+        locationViewPager.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent goCategoryPage = new Intent(MainActivity.this, CategoryActivity.class);
+                startActivity(goCategoryPage);
+                finish();
+            }
+        });
 
         //=========================================================================================================
         //========================================image slider ENDS here===========================================
