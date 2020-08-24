@@ -2,7 +2,6 @@ package com.example.takemethereapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -12,7 +11,6 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -41,7 +39,6 @@ public class RegisterActivity extends AppCompatActivity {
         regPass = (EditText) findViewById(R.id.reg_password);
         regConfirmPass = (EditText) findViewById(R.id.reg_confirm_pass);
         regBtn = (Button) findViewById(R.id.reg_btn);
-//        reg_login_btn = (Button) findViewById(R.id.reg_login_btn);
         registerProgress = (ProgressBar) findViewById(R.id.register_progressbar);
         logText = findViewById(R.id.logTextView);
 

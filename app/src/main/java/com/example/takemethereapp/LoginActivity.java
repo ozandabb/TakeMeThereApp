@@ -2,7 +2,6 @@ package com.example.takemethereapp;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -12,7 +11,6 @@ import android.widget.EditText;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -22,7 +20,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class LoginActivity extends AppCompatActivity {
 
     private EditText loginEmailText, loginPasswordText;
-    private Button loginBtn, loginRegBtn;
+    private Button loginBtn;
     private TextView regText;
     private FirebaseAuth mAuth;
     private ProgressBar loginProgressBar;
@@ -38,7 +36,6 @@ public class LoginActivity extends AppCompatActivity {
         loginPasswordText = (EditText) findViewById(R.id.re);
         loginBtn = (Button) findViewById(R.id.login_btn);
         regText = findViewById(R.id.regTextView);
-//        loginRegBtn = (Button) findViewById(R.id.login_reg_btn);
         loginProgressBar = findViewById(R.id.login_progressBar);
 
         regText.setOnClickListener(new View.OnClickListener() {
@@ -74,12 +71,6 @@ public class LoginActivity extends AppCompatActivity {
                 }
             }
         });
-    }
-
-    private void sendToRegister() {
-        Intent goLogin = new Intent(LoginActivity.this, RegisterActivity.class);
-        startActivity(goLogin);
-        finish();
     }
 
     @Override

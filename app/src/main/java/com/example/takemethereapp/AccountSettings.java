@@ -59,8 +59,8 @@ public class AccountSettings extends AppCompatActivity {
         accountButton.setEnabled(false);
 
         firebaseFirestore.collection("Users").document(user_id).get().addOnCompleteListener(new OnCompleteListener<DocumentSnapshot>() {
-            @Override
-            public void onComplete(@NonNull Task<DocumentSnapshot> task) {
+                @Override
+                public void onComplete(@NonNull Task<DocumentSnapshot> task) {
                 if (task.isSuccessful()){
                     if (task.getResult().exists()){
                         String name = task.getResult().getString("name");

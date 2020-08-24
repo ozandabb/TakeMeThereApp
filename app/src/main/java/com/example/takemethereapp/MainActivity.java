@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
@@ -35,8 +36,8 @@ public class MainActivity extends AppCompatActivity {
     private static final String TAG = "MainActivity";
     private static final int ACTIVITY_NUM = 0;
     private FirebaseAuth mAuth;
-    private ImageView logout, arrow;
-    private Button goSetup;
+    private ImageView logout;
+    private TextView arrow;
 
     private RecyclerView blog_list_view;
     private BlogRecylerAdapter blogRecylerAdapter;
@@ -60,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         firebaseFirestore = FirebaseFirestore.getInstance();
         logout = findViewById(R.id.home_logout_btn);
-        goSetup = findViewById(R.id.goSetup);
         arrow = findViewById(R.id.arrowHome);
 
         arrow.setOnClickListener(new View.OnClickListener() {
@@ -71,15 +71,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(goCategoryPage);
                 finish();
 
-            }
-        });
-
-        goSetup.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent goMain = new Intent(MainActivity.this, InstructionActivity.class);
-                startActivity(goMain);
-                finish();
             }
         });
 
@@ -155,14 +146,14 @@ public class MainActivity extends AppCompatActivity {
 
         locationViewPager.setPageTransformer(compositePageTransformer);
 
-        locationViewPager.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent goCategoryPage = new Intent(MainActivity.this, CategoryActivity.class);
-                startActivity(goCategoryPage);
-                finish();
-            }
-        });
+//        locationViewPager.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                Intent goCategoryPage = new Intent(MainActivity.this, CategoryActivity.class);
+//                startActivity(goCategoryPage);
+//                finish();
+//            }
+//        });
 
         //=========================================================================================================
         //========================================image slider ENDS here===========================================
@@ -200,9 +191,6 @@ public class MainActivity extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 switch (item.getItemId()){
                     case R.id.ic_home:
-                        Intent homeIntent = new Intent(MainActivity.this,MainActivity.class);
-                        startActivity(homeIntent);
-                        finish();
                         break;
                     case R.id.ic_category:
                         Intent ExerciseIntent = new Intent(MainActivity.this, CategoryActivity.class);
